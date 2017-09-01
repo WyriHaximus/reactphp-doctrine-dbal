@@ -1,0 +1,23 @@
+{
+    "require": {
+        "php": "^7.0",
+        "wyrihaximus/react-child-process-pool": "^1.4",
+        "doctrine/dbal": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "WyriHaximus\\React\\Doctrine\\DataBaseAbstractionLayer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WyriHaximus\\React\\Tests\\Doctrine\\DataBaseAbstractionLayer\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "7.0"
+        }
+    }
+}
