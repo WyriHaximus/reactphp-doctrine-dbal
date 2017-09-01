@@ -1,4 +1,12 @@
 {
+    "name": "wyrihaximus/react-doctrine-dbal",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cees-Jan Kiewiet",
+            "email": "ceesjank@gmail.com"
+        }
+    ],
     "require": {
         "php": "^7.0",
         "wyrihaximus/react-child-process-pool": "^1.4",
