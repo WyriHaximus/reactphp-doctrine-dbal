@@ -12,6 +12,9 @@
         "wyrihaximus/react-child-process-pool": "^1.4",
         "doctrine/dbal": "^2.5"
     },
+    "require-dev": {
+        "api-clients/test-utilities": "^4.1"
+    },
     "autoload": {
         "psr-4": {
             "WyriHaximus\\React\\Doctrine\\DataBaseAbstractionLayer\\": "src/"
