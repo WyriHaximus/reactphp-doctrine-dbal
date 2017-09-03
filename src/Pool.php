@@ -50,4 +50,18 @@ final class Pool
             return $payload->getPayload()['all'];
         });
     }
+
+    public function fetchColumn(string $query, array $params = [], int $column = 0): PromiseInterface
+    {
+        return $this->pool->rpc(MessageFactory::rpc(
+            'fetchColumn',
+            [
+                'query' => $query,
+                'params' => $params,
+                'column' => $column,
+            ]
+        ))->then(function (Payload $payload) {
+            return $payload->getPayload()['column'];
+        });
+    }
 }

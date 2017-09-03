@@ -32,10 +32,17 @@ final class Child implements ChildInterface
             );
         });
         $messenger->registerRpc('fetchAll', function (Payload $payload) {
-            return resolve(['all' =>$this->connection->fetchAll(
+            return resolve(['all' => $this->connection->fetchAll(
                 $payload['query'],
                 $payload['params'],
                 $payload['types']
+            )]);
+        });
+        $messenger->registerRpc('fetchColumn', function (Payload $payload) {
+            return resolve(['column' => $this->connection->fetchColumn(
+                $payload['query'],
+                $payload['params'],
+                $payload['column']
             )]);
         });
     }
