@@ -17,6 +17,12 @@ final class Pool
      */
     private $pool;
 
+    /**
+     * @param LoopInterface $loop
+     * @param array $credentials
+     *
+     * @return PromiseInterface
+     */
     public static function create(LoopInterface $loop, array $credentials): PromiseInterface
     {
         return Flexible::createFromClass(Child::class, $loop)->then(function (PoolInterface $pool) use ($credentials) {
@@ -24,6 +30,12 @@ final class Pool
         });
     }
 
+    /**
+     * @param PoolInterface $pool
+     * @param array $credentials
+     *
+     * @internal
+     */
     private function __construct(PoolInterface $pool, array $credentials)
     {
         $this->pool = $pool;
@@ -37,6 +49,13 @@ final class Pool
         });
     }
 
+    /**
+     * @param string $query
+     * @param array $params
+     * @param array $types
+     *
+     * @return PromiseInterface
+     */
     public function fetchAll(string $query, array $params = [], array $types = []): PromiseInterface
     {
         return $this->pool->rpc(MessageFactory::rpc(
@@ -51,6 +70,13 @@ final class Pool
         });
     }
 
+    /**
+     * @param string $query
+     * @param array $params
+     * @param int $column
+     *
+     * @return PromiseInterface
+     */
     public function fetchColumn(string $query, array $params = [], int $column = 0): PromiseInterface
     {
         return $this->pool->rpc(MessageFactory::rpc(

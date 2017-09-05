@@ -18,11 +18,19 @@ final class Child implements ChildInterface
      */
     private $connection;
 
+    /**
+     * @param Messenger $messenger
+     * @param LoopInterface $loop
+     */
     public static function create(Messenger $messenger, LoopInterface $loop)
     {
         new self($messenger, $loop);
     }
 
+    /**
+     * @param Messenger $messenger
+     * @param LoopInterface $loop
+     */
     private function __construct(Messenger $messenger, LoopInterface $loop)
     {
         $messenger->registerRpc('connect', function (Payload $payload) {
