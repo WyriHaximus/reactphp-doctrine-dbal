@@ -1,5 +1,6 @@
 {
     "name": "wyrihaximus/react-doctrine-dbal",
+    "description": "ReactPHP Child Process Pool wrapper around doctrine/dbal",
     "license": "MIT",
     "authors": [
         {
